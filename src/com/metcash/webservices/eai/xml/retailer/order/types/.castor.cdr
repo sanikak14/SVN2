@@ -1,0 +1,5 @@
+#Wed May 06 08:53:06 EST 2009
+com.metcash.webservices.eai.xml.retailer.order.types.BackOrderType=com.metcash.webservices.eai.xml.retailer.order.types.descriptors.BackOrderTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.order.types.ProductCodeTypeType=com.metcash.webservices.eai.xml.retailer.order.types.descriptors.ProductCodeTypeTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.order.types.OrderApprovedType=com.metcash.webservices.eai.xml.retailer.order.types.descriptors.OrderApprovedTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.order.types.CustomerStateCodeType=com.metcash.webservices.eai.xml.retailer.order.types.descriptors.CustomerStateCodeTypeDescriptor

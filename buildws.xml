@@ -1,0 +1,112 @@
+	<project basedir="." default="generateAll" name="ALM WS Schemas">
+	<property file="build.properties" />
+
+	<property name="schema.dir" value="Schemas"/>
+	<property name="out.dir" value="${schema.dir}/src" />
+	
+	<path id="project.classpath">
+		<pathelement location="${schema.dir}" />
+		
+		<fileset dir="${basedir}/castor">
+			<include name="**/*.jar" />
+		</fileset>
+
+		<fileset dir="${almportal.common.library.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+		
+		
+		
+	<target name="generateAll" depends="clean, generateTypes, generateOrder, generateOrderStatus, generateOrderHistory, generatePriceSoh">
+	</target>
+
+	<target name="generateCastorCode">
+		<echo message="XSD: ${schema.dir}/${xsd.file}" />
+		<echo message="Package: ${package.name}" />
+		<java classpathref="project.classpath" classname="org.exolab.castor.builder.SourceGeneratorMain">
+			<arg value="-f" />
+			<arg value="-i" />
+			<arg value="${schema.dir}/${xsd.file}" />
+			<arg value="-package" />
+			<arg value="${package.name}" />
+			<arg value="-dest" />
+			<arg value="${out.dir}" />
+			<arg value="-types" />
+			<arg value="j2" />
+		</java>
+	</target>
+
+	<target name="clean" description="delete generated source code">
+		<delete dir="${out.dir}" />
+		<mkdir dir="${out.dir}" />
+	</target>
+
+	<target name="generateTypes" description="generate Global Types source codes.">
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="globalTypes.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.globaltypes" />
+		</antcall>
+	</target>
+
+	<target name="generateOrder" description="generate Order source codes.">
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Orders\SupplierOrder.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.order" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Orders\SupplierOrderResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.order.validation" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Orders\RetailerOrder.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.retailer.order" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Orders\RetailerOrderResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.retailer.order.validation" />
+		</antcall>
+	</target>
+
+	<target name="generateOrderStatus" description="generate Order Status source codes.">
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="OrderStatus\SupplierOrderStatus.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.orderstatus" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="OrderStatus\OrderStatusResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.orderstatus.validation" />
+		</antcall>
+	</target>
+
+	<target name="generateOrderHistory" description="generate Order History source codes.">
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="OrderHistory\SupplierOrderHistory.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.orderhistory" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="OrderHistory\OrderHistoryResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.orderhistory.validation" />
+		</antcall>
+	</target>
+
+	<target name="generatePriceSoh" description="generate Price SOH source codes.">
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Product\SupplierPriceSoh.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.pricesoh" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Product\SupplierPriceSohResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.supplier.pricesoh.validation" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Product\RetailerPriceSoh.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.retailer.pricesoh" />
+		</antcall>
+		<antcall target="generateCastorCode">
+			<param name="xsd.file" value="Product\RetailerPriceSohResponse.xsd" />
+			<param name="package.name" value="com.metcash.webservices.eai.xml.retailer.pricesoh.validation" />
+		</antcall>
+	</target>
+</project>

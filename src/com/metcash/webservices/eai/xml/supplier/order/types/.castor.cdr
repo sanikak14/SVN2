@@ -1,0 +1,8 @@
+#Wed May 06 08:53:02 EST 2009
+com.metcash.webservices.eai.xml.supplier.order.types.ApplyBonusType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.ApplyBonusTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.OrderTypeType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.OrderTypeTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.ApplyQdaType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.ApplyQdaTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.TrnApprovedType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.TrnApprovedTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.BackOrderType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.BackOrderTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.CustomerStateCodeType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.CustomerStateCodeTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.types.ProductCodeTypeType=com.metcash.webservices.eai.xml.supplier.order.types.descriptors.ProductCodeTypeTypeDescriptor

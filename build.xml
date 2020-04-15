@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project name="ALMWebservice" default="war">
+ 	<property name="jboss" value="D:/Shivani/jboss-as-7.1.1.Final" />
+	<property name="jboss.deployment" value="${jboss}/standalone/deployments" />
+	<property name="base" value="." />
+	<property name="source" value="${base}/src" />
+	
+    <path id="compile.classpath">
+      <fileset dir="${base}/WebContent/WEB-INF/lib">
+    	<!--<fileset dir="${base}/projLibs">-->
+            <include name="*.jar"/>
+      		<!--<include name="*.properties"/>-->
+        </fileset>
+    </path>
+   
+    <target name="compile">
+        <javac includeantruntime="false" destdir="${base}/classes" debug="true" srcdir="${source}">
+        <classpath refid="compile.classpath"/>
+        </javac>
+        <javac includeantruntime="false" destdir="${base}/WebContent/WEB-INF/classes" debug="true" srcdir="${source}">
+        <classpath refid="compile.classpath"/>
+        </javac>
+    	<javac includeantruntime="false" destdir="${base}/WebContent/WEB-INF/classes/conf" debug="true" srcdir="${base}/resources/conf">
+    	        <classpath refid="compile.classpath"/>
+    		
+    	</javac>
+    	<copy todir="${base}/WebContent/WEB-INF/classes/conf" >  
+    	    <fileset dir="${base}/resources/conf" includes="**"/>  
+    	</copy> 
+    	<copy file="${base}/resources/log4j.properties" todir="${base}/WebContent/WEB-INF/classes"/> 
+    </target>
+     
+    <target name="war" depends="compile">
+       <!-- <war destfile="${jboss.deployment}/almws.war" webxml="WebContent/WEB-INF/web.xml">-->
+    	<war destfile="${base}/build/almws.war" webxml="WebContent/WEB-INF/web.xml">
+            <fileset dir="${base}/WebContent"/>
+            <lib dir="${base}/WebContent/WEB-INF/lib"/>
+        </war>
+         <antcall target="deployTarget" />
+    </target> 
+    
+    <target name="deployTarget">
+		<copy file="${base}/build/almws.war" todir="${jboss.deployment}" />
+	</target>   
+    </project>
+    
+    <!-- <?xml version="1.0" encoding="UTF-8"?>
+
+$RCSfile: build.xml $ $Date: 16/09/19 $Author: Kirtana Rambhad$
+
+<project default="warTarget" basedir=".">
+	<property name="jboss" value="D:/jboss-as-7.1.1.Final" />
+	<property name="jboss.deployment" value="${jboss}/standalone/deployments" />
+	<property name="base" value="." />
+	<property name="source" value="${base}/src" />
+
+	<target name="warTarget">
+		<war warfile="almkrmip.war" needxmlfile="false"
+			webxml="${base}/WebContent/WEB-INF/web.xml">
+			<fileset dir="${source}/com/metcash/ws" />
+
+			<exclude name="WEB-INF/web.xml" />
+		</war>
+		<antcall target="deployTarget" />
+	</target>
+	<target name="deployTarget">
+		<copy file="${base}/almkrmip.war" todir="${jboss.deployment}" />
+	</target>
+
+</project> -->

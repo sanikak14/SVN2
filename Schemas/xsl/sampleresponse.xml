@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SupplierOrderResponse xmlns="">
+    <ResponseHeader>
+        <Pillar>ALM</Pillar>
+        <Supplier>71865</Supplier>
+        <SupplierStateCode>1</SupplierStateCode>
+        <StatusMessage></StatusMessage>
+    </ResponseHeader>
+    <OrderDetail>
+        <OrderHeaderResponse>
+            <WebOrderId>0</WebOrderId>
+            <VendorOrderId>0</VendorOrderId>
+            <SupplierRepCode>71865001</SupplierRepCode>
+            <SupplierRepStateCode>1</SupplierRepStateCode>
+            <SupplierReference>test ws</SupplierReference>
+            <CustomerId>900006</CustomerId>
+            <CustomerStateCode>1</CustomerStateCode>
+            <WebCreatedTime></WebCreatedTime>
+            <ItemsAccepted>1</ItemsAccepted>
+            <ItemsRejected>0</ItemsRejected>
+        </OrderHeaderResponse>
+        <LineMessages/>
+    </OrderDetail>
+</SupplierOrderResponse>
+

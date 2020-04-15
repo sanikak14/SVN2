@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mgt="metcash/globalTypes" xmlns:mosr="metcash/orderStatusResponse" targetNamespace="metcash/orderStatusResponse" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="metcash/globalTypes" schemaLocation="../globalTypes.xsd"/>
+	<xs:element name="OrderStatusResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrderResponse" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OrderStatusDetail" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OrderHeaderStatus">
+											<xs:complexType>
+												<xs:attribute name="WebOrderId" type="mgt:WebOrderIdType" use="required"/>
+												<xs:attribute name="CustomerId" type="mgt:CustomerIdType" use="required"/>
+												<xs:attribute name="CustomerStateCode" type="mgt:StateCodeType" use="required"/>
+												<xs:attribute name="CreateDate" type="xs:dateTime" use="required"/>
+												<xs:attribute name="TurnInOrderType" use="required">
+													<xs:annotation>
+														<xs:documentation>R: NORMAL ORDER, B: BONUS ORDER, O: OVERRIDE ORDER, T: TURNIN ORDER, '': M/F ORDER</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction
+															base="xs:string">
+
+															<xs:enumeration
+																value="R" />
+															<xs:enumeration
+																value="B" />
+															<xs:enumeration
+																value="O" />
+															<xs:enumeration
+																value="T" />
+
+															<xs:minLength
+																value="0">
+															</xs:minLength>
+															<xs:maxLength
+																value="1">
+															</xs:maxLength>
+															<xs:enumeration
+																value="">
+															</xs:enumeration>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="TurnInOrderApproved" type="xs:boolean" use="optional"/>
+												<xs:attribute name="OrderSource" use="optional">
+													<xs:annotation>
+														<xs:documentation>MFR: Mainframe, WEB: Webstore, WSE: WebService</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="MFR"/>
+															<xs:enumeration value="WEB"/>
+															<xs:enumeration value="WSE"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Stage" use="required">
+													<xs:annotation>
+														<xs:documentation>R: RECEIVED, P: PROCESSED, E: EXTRACTED, I: INVOICED, C: CANCELLED, J: REJECTED</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="1"/>
+															<xs:enumeration value="R"/>
+															<xs:enumeration value="P"/>
+															<xs:enumeration value="E"/>
+															<xs:enumeration value="I"/>
+															<xs:enumeration value="C"/>
+															<xs:enumeration value="J"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Status" use="required">
+													<xs:annotation>
+														<xs:documentation>C: COMPLETE, I: INCOMPLETE, P: PENDING, X: CANCELLED, J: REJECTED, U: UNDEFINED</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="1"/>
+															<xs:enumeration value="C"/>
+															<xs:enumeration value="I"/>
+															<xs:enumeration value="P"/>
+															<xs:enumeration value="X"/>
+															<xs:enumeration value="J"/>
+															<xs:enumeration value="U"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="DeliveryDate" type="xs:date" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OrderLineStatus" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="id" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:int">
+															<xs:minInclusive value="0"/>
+															<xs:maxInclusive value="9999999"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="ProductCode" type="mgt:ProductCodeType" use="required"/>
+												<xs:attribute name="LineStatus" use="required">
+													<xs:annotation>
+														<xs:documentation>' ': Undefined, 0: Reserved, 1: Sold Out, 2: Not Available, 3: Not in Range, 5: Quantity Adjusted, 7: Cross Docked, 8: Rejected, 9: Cancelled</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:length value="1"/>
+															<xs:enumeration value=" "/>
+															<xs:enumeration value="0"/>
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+															<xs:enumeration value="3"/>
+															<xs:enumeration value="4"/>
+															<xs:enumeration value="5"/>
+															<xs:enumeration value="6"/>
+															<xs:enumeration value="7"/>
+															<xs:enumeration value="8"/>
+															<xs:enumeration value="9"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="QtyReserved" use="required" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>Format: 'carton qty'.'unit qty'. Eg. 3 cartons and 5 units would be 3.5</xs:documentation>
+													</xs:annotation>
+
+												</xs:attribute>
+												<xs:attribute name="QtyUnreserved" use="required" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>Format: 'carton qty'.'unit qty'. Eg. 3 cartons and 5 units would be 3.5</xs:documentation>
+													</xs:annotation>
+
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="mosr:Message" maxOccurs="1" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="index" type="mgt:IndexType" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="mosr:Message" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Message" type="mgt:MessageType"/>
+</xs:schema>

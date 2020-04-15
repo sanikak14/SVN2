@@ -1,0 +1,7 @@
+#Thu Apr 09 15:04:44 EST 2020
+com.metcash.webservices.eai.xml.supplier.pricesoh.SupplierRep=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.SupplierRepDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.Customer=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.CustomerDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.SupplierPriceSohRequest=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.SupplierPriceSohRequestDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.SupplierPriceSohRequestType=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.SupplierPriceSohRequestTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.ProductType=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.ProductTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.Product=com.metcash.webservices.eai.xml.supplier.pricesoh.descriptors.ProductDescriptor

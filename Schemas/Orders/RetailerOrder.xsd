@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Aidan Power (Metcash) -->
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Aidan Power (Metcash) -->
+<xs:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Msg">
+		<xs:annotation>
+			<xs:documentation>
+				Comment describing your root element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Order" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrderHeader">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ExternalOrderId"
+								minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="20" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CustomerOrderId"
+								minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="10" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CustomerId">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="8" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CustomerStateCode">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1" />
+										<xs:enumeration value="1" />
+										<xs:enumeration value="2" />
+										<xs:enumeration value="3" />
+										<xs:enumeration value="4" />
+										<xs:enumeration value="5" />
+										<xs:enumeration value="6" />
+										<xs:enumeration value="7" />
+										<xs:enumeration value="8" />
+										<xs:enumeration value="9" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OrderApproved">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="1" />
+										<xs:enumeration value="Y" />
+										<xs:enumeration value="N" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SpecialInstructions"
+								minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="90" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DeliveryDate"
+								type="xs:string" minOccurs="0" />
+							<xs:element name="OrderCreatedDate"
+								type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LineItem" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+                        <xs:all>
+							<xs:element name="LineId">
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:maxInclusive value="9999999" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ProductCode">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="14" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OrderQuantity">
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:maxInclusive value="99999" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BackOrder">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="1" />
+										<xs:enumeration value="Y" />
+										<xs:enumeration value="N" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ProductCodeType">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="1" />
+										<xs:enumeration value="M" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

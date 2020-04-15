@@ -1,0 +1,4 @@
+#Thu Apr 09 15:04:43 EST 2020
+com.metcash.webservices.eai.xml.supplier.orderhistory.validation.Message=com.metcash.webservices.eai.xml.supplier.orderhistory.validation.descriptors.MessageDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.validation.OrderHistoryResponse=com.metcash.webservices.eai.xml.supplier.orderhistory.validation.descriptors.OrderHistoryResponseDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.validation.OrderHistory=com.metcash.webservices.eai.xml.supplier.orderhistory.validation.descriptors.OrderHistoryDescriptor

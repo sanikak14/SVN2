@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mgt="metcash/globalTypes" xmlns:mspsr="metcash/supplierPriceSohResponse" targetNamespace="metcash/supplierPriceSohResponse" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="metcash/globalTypes" schemaLocation="../globalTypes.xsd"/>
+	<xs:complexType name="DealDescriptionType">
+		<xs:attribute name="index" type="mgt:IndexType" use="required"/>
+		<xs:attribute name="Description" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="SupplierPriceSohResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ProductResponse" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SupplierProductDetail" minOccurs="0">
+								<xs:complexType>
+                                    <xs:all>
+										<xs:element name="QDAList" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="QDA" type="mspsr:DealDescriptionType" maxOccurs="unbounded" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="BonusList" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Bonus" type="mspsr:DealDescriptionType" maxOccurs="unbounded" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ParcelBuyList" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ParcelBuy" type="mspsr:DealDescriptionType" maxOccurs="unbounded" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="ProductCode" type="mgt:ProductCodeType" use="required"/>
+									<xs:attribute name="ProductDescription" type="xs:string" use="required"/>
+									<xs:attribute name="BaseWS" type="mgt:CurrencyInCentsType" use="required"/>
+									<xs:attribute name="Deal" type="mgt:CurrencyInCentsType" use="optional"/>
+									<xs:attribute name="DealDescription" type="xs:string" use="optional"/>
+									<xs:attribute name="UniversalDeal" type="mgt:CurrencyInCentsType" use="optional"/>
+									<xs:attribute name="WET" type="mgt:CurrencyInCentsType" use="optional"/>
+									<xs:attribute name="NetWS" type="mgt:CurrencyInCentsType" use="required">
+										<xs:annotation>
+											<xs:documentation>incl WET, excl GST</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="DeliveryFee" type="mgt:CurrencyInCentsType" use="optional"/>
+									<xs:attribute name="GST" type="mgt:CurrencyInCentsType" use="required"/>
+									<xs:attribute name="CasePrice" type="mgt:CurrencyInCentsType" use="required"/>
+									<xs:attribute name="AdminFee" type="mgt:CurrencyInCentsType" use="optional">
+										<xs:annotation>
+											<xs:documentation>incl GST</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="FinanceFee" type="mgt:CurrencyInCentsType" use="optional"/>
+									<xs:attribute name="TotalCasePrice" type="mgt:CurrencyInCentsType" use="required"/>
+									<xs:attribute name="LUC" type="mgt:CurrencyInCentsType" use="required">
+										<xs:annotation>
+											<xs:documentation>incl GST</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ApplyQDA" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Only applicable when there is a deal</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ApplyBonus" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation>Only applicable when there is a deal</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="SOH" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>Format: 'carton qty'.'unit qty'. Eg. 3 cartons and 5 units of would be 3.5
+</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="SOHStatus" type="mgt:SOHStatusType" use="required">
+										<xs:annotation>
+											<xs:documentation>N: NOT AVAILABLE, A: AVAILABLE, O: SOLD OUT, S: SUBSTITUTE</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="SOHTimestamp" type="xs:dateTime" use="required"/>
+									<xs:attribute name="OnOrderQty" type="xs:int" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="mspsr:Message" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="index" type="mgt:IndexType" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="mspsr:Message" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Message" type="mgt:MessageType"/>
+</xs:schema>

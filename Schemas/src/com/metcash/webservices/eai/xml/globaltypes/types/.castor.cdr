@@ -1,0 +1,5 @@
+#Thu Apr 09 15:04:46 EST 2020
+com.metcash.webservices.eai.xml.globaltypes.types.SOHStatusType=com.metcash.webservices.eai.xml.globaltypes.types.descriptors.SOHStatusTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.types.StateCodeType=com.metcash.webservices.eai.xml.globaltypes.types.descriptors.StateCodeTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.types.ProductCodeTypeType=com.metcash.webservices.eai.xml.globaltypes.types.descriptors.ProductCodeTypeTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.types.SeverityType=com.metcash.webservices.eai.xml.globaltypes.types.descriptors.SeverityTypeDescriptor

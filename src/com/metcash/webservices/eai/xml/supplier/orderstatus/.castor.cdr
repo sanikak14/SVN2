@@ -1,0 +1,6 @@
+#Wed May 06 08:53:09 EST 2009
+com.metcash.webservices.eai.xml.supplier.orderstatus.SupplierOrderStatusRequest=com.metcash.webservices.eai.xml.supplier.orderstatus.descriptors.SupplierOrderStatusRequestDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.SupplierRep=com.metcash.webservices.eai.xml.supplier.orderstatus.descriptors.SupplierRepDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.OrderType=com.metcash.webservices.eai.xml.supplier.orderstatus.descriptors.OrderTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.SupplierOrderStatusRequestType=com.metcash.webservices.eai.xml.supplier.orderstatus.descriptors.SupplierOrderStatusRequestTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.Order=com.metcash.webservices.eai.xml.supplier.orderstatus.descriptors.OrderDescriptor

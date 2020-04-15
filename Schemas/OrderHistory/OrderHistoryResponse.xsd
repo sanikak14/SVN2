@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	targetNamespace="metcash/orderHistoryResponse"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:mgt="metcash/globalTypes"
+	xmlns:mohr="metcash/orderHistoryResponse">
+	<xs:import namespace="metcash/globalTypes"
+		schemaLocation="../globalTypes.xsd" />
+	<xs:element name="OrderHistoryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrderHistory" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="WebOrderId"
+							type="mgt:WebOrderIdType" use="required">
+						</xs:attribute>
+						<xs:attribute name="CreatedDate"
+							type="xs:dateTime" use="required">
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="mohr:Message" maxOccurs="1"
+					minOccurs="0">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Message" type="mgt:MessageType"></xs:element>
+</xs:schema>

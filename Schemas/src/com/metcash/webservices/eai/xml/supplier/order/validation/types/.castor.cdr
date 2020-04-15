@@ -1,0 +1,4 @@
+#Thu Apr 09 15:04:38 EST 2020
+com.metcash.webservices.eai.xml.supplier.order.validation.types.SupplierRepStateCodeType=com.metcash.webservices.eai.xml.supplier.order.validation.types.descriptors.SupplierRepStateCodeTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.validation.types.TurnInOrderTypeType=com.metcash.webservices.eai.xml.supplier.order.validation.types.descriptors.TurnInOrderTypeTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.order.validation.types.CustomerStateCodeType=com.metcash.webservices.eai.xml.supplier.order.validation.types.descriptors.CustomerStateCodeTypeDescriptor

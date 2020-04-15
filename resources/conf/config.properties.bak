@@ -1,0 +1,172 @@
+# Jms configuration
+config.JAM_TIMEOUT = 3
+config.JMS_MSG_PROCESSOR_WAIT = 60000
+
+config.JMS_PUB_SUB_DOMAIN_FACTORY = AlmTCF
+config.JMS_RECV_Q  = mfToAlm
+config.JMS_SEND_Q  = alMToMf
+config.JMS_CLIENT_ID = ALMTEST
+
+# Data load configuration
+config.DATALOAD_ENABLED=true
+config.ORDER_HISTORY_DAYS=90
+config.ORDER_ARCHIVE_FREQUENCY=5
+config.ORDER_ARCHIVE_START_TIME=xxxxxxxx0200
+config.PRODUCT_ARCHIVE_FREQUENCY=5
+config.PRODUCT_ARCHIVE_START_TIME=xxxxxxxx0200
+config.PRODUCT_HISTORY_MONTHS=13
+config.INITITAL_CUSTOMER_PASSWORD=redbull
+config.ADVERTISING_ARCHIVE_START_TIME=xxxxxxxx0200
+config.ADVERTISING_ARCHIVE_FREQUENCY=5
+config.ADVERTISING_HISTORY_DAYS=396
+
+
+# Connect:Mailbox configuration
+config.MAILBOX_SERVER = mbprd1
+
+config.CONTEXT_ROOT=alm
+config.CONTROLLER_PATH=user
+config.MINIMUM_PASSWORD_LENGTH=6
+
+config.REALM_ENABLED=false
+config.STOCK_CHECKING_ENABLED=true
+config.REAL_TIME_STOCK_ENABLED=false
+
+# Used to display contact phone number for relevant sites
+# Michael Camilleri
+config.CUSTOMER_SERVICE_PHONE_ALM = (02) 9741 7326
+# Michael Camilleri's
+config.ALM_CUSTOMER_SERVICE_PHONE_HOP = (02) 9741 7326
+# Val Chillingworth's
+config.CUSTOMER_SERVICE_PHONE_TLC = (09) 263 3910
+# Used to display contact phone number for relevant sites
+# Michael Camilleri's
+config.CUSTOMER_SERVICE_PHONE_CCC = (02) 9741 7326
+
+
+
+# Used to associate site context with server name.
+# It is recommended that the String be specific enough to identify the site, 
+# but also generic enough to tolerate small variations in URL and still match.
+# eg "tasman" for www.tasmanliquor.co.nz.
+
+config.SERVER_NAME_RECOGNITION_STRING_ALM = alm
+config.SERVER_NAME_RECOGNITION_STRING_TLC = www.tasmanliquor.co.nz
+config.SERVER_NAME_RECOGNITION_STRING_HOP = www.harbottleonpremise.com.au
+config.SERVER_NAME_RECOGNITION_STRING_ALC = www.alliedliquor.co.nz
+
+
+config.CONTACT_CUSTOMER_SERVICE_AFTER = 30 minutes
+
+
+config.XML_ORDER_PRODUCER_WAIT_TIME=60000
+config.XML_REGISTRATION_PRODUCER_START_TIME=17:00:00
+
+#Persistent Basket properties , frequency of autosave and major groups persisted
+config.AUTOSAVE_BASKET_FREQ=300000
+config.AUTOSAVE_BASKET_GROUPS=A1020,A1027,A1065,A1086,A1095,A2012,A2073,A2095,302,303,307,316,319,338,358,370,395,A4000,A4011,A4012,A4093,A4095,A5000,A5001,A5057,A5065,A5092,A5094,A5095,633,686,695,A8008,905,907,908,909,910,911,913,
+
+#Groups prohibited from using turnin site
+config.NON_TURNIN_MAJOR_GROUPS=A1065,A2073,557,319,358,364,368,A7004,A7005,A7006,A7010,A7027,A7039,A7045
+
+#Host Support System
+config.WEB_SERVICES_HSS_TIMEOUT=60000
+
+
+#config.WEB_SERVICES_URL_HSS_NSW=http://testft2/wssp01-hssservice/services/HSSService
+config.WEB_SERVICES_URL_HSS_NSW=http://ftgwnsw.davids.com.au/wssp01-hssservice/services/HSSService
+config.HSS_STATE_PREFIX_NSW=LQ
+config.HSS_STATE_PREFIX_ACT=AQ
+config.HSS_STATE_PREFIX_WA=WQ
+
+#config.WEB_SERVICES_URL_HSS_VIC=http://testft2/wssp01-hssservice/services/HSSService
+config.WEB_SERVICES_URL_HSS_VIC=http://ftgwvic.davids.com.au/wssp01-hssservice/services/HSSService
+config.HSS_STATE_PREFIX_VIC=LQ
+config.HSS_STATE_PREFIX_SA=RQ
+config.HSS_STATE_PREFIX_TAS=TQ
+
+config.WEB_SERVICES_URL_MB=http://beatest:8988/MailboxEnquiry/MailboxServiceService?WSDL
+
+#config.WEB_SERVICES_URL_HSS_QLD=http://testft2/wssp01-hssservice/services/HSSService
+config.WEB_SERVICES_URL_HSS_QLD=http://ftgwqld.davids.com.au/wssp01-hssservice/services/HSSService
+config.HSS_STATE_PREFIX_QLD=LQ
+config.HSS_STATE_PREFIX_NT=NQ
+
+# Flag to switch code specific to IDS states on/off values: on/off.
+config.IDS_SWITCH=on
+#Comma seperated list of IDS states
+config.IDS_STATES=1,2,3,4,5,6,7,8,
+# Branch Transfer Major Groups - Used to determine Supplier Bonus products
+config.IDS_BRANCH_TRANSFER_NSW=A1006
+config.IDS_BRANCH_TRANSFER_VIC=A2006
+config.IDS_BRANCH_TRANSFER_QLD=A3006
+config.IDS_BRANCH_TRANSFER_WA=A4006
+config.IDS_BRANCH_TRANSFER_SA=A5006
+config.IDS_BRANCH_TRANSFER_NT=A6006
+config.IDS_BRANCH_TRANSFER_TAS=A7006
+config.IDS_BRANCH_TRANSFER_ACT=A8006
+config.IDS_BRANCH_TRANSFER_NZ=A9006
+
+#Properties for integration with Powernet web app (Retalix)
+config.POWERNET_USER_PREFIX_NSW=71
+config.POWERNET_USER_PREFIX_VIC=72
+config.POWERNET_USER_PREFIX_QLD=73
+config.POWERNET_USER_PREFIX_WA=74
+config.POWERNET_USER_PREFIX_SA=75
+config.POWERNET_USER_PREFIX_NT=76
+config.POWERNET_USER_PREFIX_TAS=77
+config.POWERNET_USER_PREFIX_ACT=78
+config.POWERNET_USER_PREFIX_NZ=79
+
+# Used to provide a user powernet vendor id prefix for IDS states e.g. 1271865 for VIC 71865 supplier account
+config.POWERNET_VENDOR_PREFIX_NSW=11
+config.POWERNET_VENDOR_PREFIX_VIC=12
+config.POWERNET_VENDOR_PREFIX_QLD=13
+config.POWERNET_VENDOR_PREFIX_WA=14
+config.POWERNET_VENDOR_PREFIX_SA=15
+config.POWERNET_VENDOR_PREFIX_NT=16
+config.POWERNET_VENDOR_PREFIX_TAS=17
+config.POWERNET_VENDOR_PREFIX_ACT=18
+config.POWERNET_VENDOR_PREFIX_NZ=19
+
+config.POWERNET_DEFAULT_PASSWORD=redbull
+config.POWERNET_URL=http://idsportal/pnet/SignonByPost.jsp
+
+config.MASTER_PASSWORD={SHA}NpkV7viY8Gbx63iJNakJ2IBbnc8=
+
+#ADVERTISING DEFAULT BANNER DATA
+config.DEFAULT_STATE_GRP_BANNER_IMG_LOCATION=media/images/advertising/default/statebanner.swf
+config.DEFAULT_STATE_GRP_BANNER_DESC=A State/Group advertisment position available.
+config.DEFAULT_NAT_BANNER_ONE_IMG_LOCATION_ALM=media/images/advertising/default/natbanneronealm.swf
+config.DEFAULT_NAT_BANNER_ONE_IMG_LOCATION_HOP=media/images/advertising/default/natbanneronehop.swf
+config.DEFAULT_NAT_BANNER_ONE_IMG_LOCATION_TLC=media/images/advertising/default/natbanneronetlc.jpg
+config.DEFAULT_NAT_BANNER_ONE_IMG_LOCATION_ALC=media/images/advertising/default/natbanneronealc.jpg
+config.DEFAULT_NAT_BANNER_ONE_DESC=National Banner position one advertisment spot available.
+config.DEFAULT_NAT_BANNER_TWO_IMG_LOCATION_ALM=media/images/advertising/default/natbannertwoalm.jpg
+config.DEFAULT_NAT_BANNER_TWO_IMG_LOCATION_HOP=media/images/advertising/default/natbannertwohop.jpg
+config.DEFAULT_NAT_BANNER_TWO_IMG_LOCATION_TLC=media/images/advertising/default/natbannertwotlc.jpg
+config.DEFAULT_NAT_BANNER_TWO_IMG_LOCATION_ALC=media/images/advertising/default/natbannertwoalc.jpg
+config.DEFAULT_NAT_BANNER_TWO_DESC=National Banner position two advertisment spot available.
+config.DEFAULT_NAT_BANNER_THREE_IMG_LOCATION_ALM=media/images/advertising/default/natbannerthreealm.jpg
+config.DEFAULT_NAT_BANNER_THREE_IMG_LOCATION_HOP=media/images/advertising/default/natbannerthreehop.jpg
+config.DEFAULT_NAT_BANNER_THREE_IMG_LOCATION_TLC=media/images/advertising/default/natbannerthreetlc.jpg
+config.DEFAULT_NAT_BANNER_THREE_IMG_LOCATION_ALC=media/images/advertising/default/natbannerthreealc.jpg
+config.DEFAULT_NAT_BANNER_THREE_DESC=National Banner position three advertisment spot available.
+config.DEFAULT_PRODUCT_IMG_LOCATION=media/images/advertising/default/defaultproduct.gif
+config.PRODUCT_IMG_PATH=media/images/advertising
+
+#LOG4J Property file location
+#config.LOG4J_PROPERTY_FILE=WEB-INF\\classes\\log4j.properties
+
+#OS CACHE - REFRESH PERIODS
+config.OSCACHE_SUPPLIER_CACHE_REFRESH_MINS=30
+
+#IBA Customer Web Services
+config.IBA_WEB_SERVICES_CUSTOMER_URL=http://portalapps:7008/IBACustomerWebService
+config.AR_EMAIL_STATES=1,2
+config.TIBCO_STATES=9,8,7,6
+
+config.EINVOICE_DOC_REP_STATES=6,5,1,2,7,4,8,9,3
+config.PORTAL_URL_CONTEXT=https://www.almliquor.com.au/alm
+config.PORTAL_MOBILE_URL_INDEX=/alm/mobile/main/index.jsp
+config.WEB_SERVICES_URL_R2W=http://tibmip:7756/ReportWebServiceV2

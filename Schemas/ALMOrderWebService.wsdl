@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.metcash.com"
+	xmlns:apachesoap="http://xml.apache.org/xml-soap"
+	xmlns:impl="http://webservices.metcash.com"
+	xmlns:intf="http://webservices.metcash.com"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsd1="metcash/orderHistoryResponse"
+	xmlns:xsd2="metcash/orderStatusResponse">
+<!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+ <wsdl:types>
+		<schema elementFormDefault="qualified"
+			targetNamespace="http://webservices.metcash.com"
+			xmlns="http://www.w3.org/2001/XMLSchema"
+			xmlns:Q1="metcash/supplierOrderHistory"
+			xmlns:Q3="metcash/supplierOrderStatus">
+            <import schemaLocation="OrderHistory/SupplierOrderHistory.xsd" namespace="metcash/supplierOrderHistory"></import>
+            <import schemaLocation="OrderStatus/SupplierOrderStatus.xsd"
+				namespace="metcash/supplierOrderStatus">
+			</import>
+			<import schemaLocation="OrderHistory/SupplierOrderHistory.xsd"
+				namespace="metcash/supplierOrderHistory">
+			</import>
+   <element name="submitRetailerOrder">
+    <complexType>
+     <sequence>
+      <element name="XMLOrder" type="xsd:string"/>
+						<element name="authenticatedRetailerId"
+							type="xsd:string" />
+						<element name="authenticatedRetailerStateId"
+							type="xsd:string" />
+     </sequence>
+    </complexType>
+   </element>
+   <element name="submitRetailerOrderResponse">
+    <complexType>
+     <sequence>
+						<element name="submitRetailerOrderReturn"
+							type="xsd:string" />
+     </sequence>
+    </complexType>
+   </element>
+   <element name="submitSupplierOrder">
+    <complexType>
+     <sequence>
+      <element name="XMLOrder" type="xsd:string"/>
+						<element name="authenticatedSupplierRepId"
+							type="xsd:string" />
+						<element name="authenticatedSupplierRepStateId"
+							type="xsd:string" />
+     </sequence>
+    </complexType>
+   </element>
+   <element name="submitSupplierOrderResponse">
+    <complexType>
+     <sequence>
+						<element name="submitSupplierOrderReturn"
+							type="xsd:string" />
+     </sequence>
+    </complexType>
+   </element>
+   <element name="authenticateUser">
+    <complexType>
+     <sequence>
+      <element name="stateCode" type="xsd:string"/>
+      <element name="userId" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="businessType" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="authenticateUserResponse">
+    <complexType>
+     <sequence>
+						<element name="authenticateUserReturn"
+							type="xsd:boolean" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="getSupplierOrderHistory">
+				<complexType>
+					<sequence>
+                        <element ref="Q1:SupplierOrderHistoryRequest"></element>
+						<element name="authenticatedUserId"
+							type="string">
+						</element>
+						<element name="authenticatedUserStateId"
+							type="string">
+						</element>
+
+					</sequence>
+				</complexType>
+			</element>
+			<element name="getSupplierOrderHistoryResponse">
+				<complexType>
+					<sequence>
+						<element name="out" type="string"></element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="getSupplierOrderStatus">
+				<complexType>
+					<sequence>
+						<element ref="Q3:SupplierOrderStatusRequest"></element>
+						<element name="authenticatedSupplierRepId"
+							type="string">
+						</element>
+						<element name="authenticatedSupplierRepStateId"
+							type="string">
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="getSupplierOrderStatusResponse">
+				<complexType>
+					<sequence>
+						<element name="out" type="string"></element>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="metcash/orderHistoryResponse"
+				schemaLocation="OrderHistory/OrderHistoryResponse.xsd">
+			</xsd:import>
+			<xsd:import namespace="metcash/orderStatusResponse"
+				schemaLocation="OrderStatus/OrderStatusResponse.xsd">
+			</xsd:import>
+		</xsd:schema>
+ </wsdl:types>
+   <wsdl:message name="authenticateUserResponse">
+		<wsdl:part element="impl:authenticateUserResponse"
+			name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="submitSupplierOrderRequest">
+      <wsdl:part element="impl:submitSupplierOrder" name="parameters"/>
+   </wsdl:message>
+   <wsdl:message name="authenticateUserRequest">
+      <wsdl:part element="impl:authenticateUser" name="parameters"/>
+   </wsdl:message>
+   <wsdl:message name="submitRetailerOrderResponse">
+		<wsdl:part element="impl:submitRetailerOrderResponse"
+			name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="submitSupplierOrderResponse">
+		<wsdl:part element="impl:submitSupplierOrderResponse"
+			name="parameters" />
+   </wsdl:message>
+   <wsdl:message name="submitRetailerOrderRequest">
+      <wsdl:part element="impl:submitRetailerOrder" name="parameters"/>
+   </wsdl:message>
+	<wsdl:message name="getSupplierOrderHistoryRequest">
+		<wsdl:part name="parameters" element="impl:getSupplierOrderHistory"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSupplierOrderHistoryResponse">
+		<wsdl:part name="parameters"
+			element="xsd1:OrderHistoryResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSupplierOrderStatusRequest">
+		<wsdl:part name="parameters"
+			element="impl:getSupplierOrderStatus">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSupplierOrderStatusResponse">
+		<wsdl:part name="parameters"
+			element="xsd2:OrderStatusResponse">
+		</wsdl:part>
+	</wsdl:message>
+   <wsdl:portType name="ALMOrderWebServicePort">
+      <wsdl:operation name="submitRetailerOrder">
+			<wsdl:input message="impl:submitRetailerOrderRequest"
+				name="submitRetailerOrderRequest" />
+			<wsdl:output message="impl:submitRetailerOrderResponse"
+				name="submitRetailerOrderResponse" />
+      </wsdl:operation>
+      <wsdl:operation name="submitSupplierOrder">
+			<wsdl:input message="impl:submitSupplierOrderRequest"
+				name="submitSupplierOrderRequest" />
+			<wsdl:output message="impl:submitSupplierOrderResponse"
+				name="submitSupplierOrderResponse" />
+      </wsdl:operation>
+      <wsdl:operation name="authenticateUser">
+			<wsdl:input message="impl:authenticateUserRequest"
+				name="authenticateUserRequest" />
+			<wsdl:output message="impl:authenticateUserResponse"
+				name="authenticateUserResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getSupplierOrderHistory">
+			<wsdl:input message="impl:getSupplierOrderHistoryRequest"
+				name="getSupplierOrderHistoryRequest">
+			</wsdl:input>
+			<wsdl:output message="impl:getSupplierOrderHistoryResponse"
+				name="getSupplierOrderHistoryResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSupplierOrderStatus">
+			<wsdl:input message="impl:getSupplierOrderStatusRequest"
+				name="getSupplierOrderStatusRequest">
+			</wsdl:input>
+			<wsdl:output message="impl:getSupplierOrderStatusResponse"
+				name="getSupplierOrderStatusResponse">
+			</wsdl:output>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ALMOrderWebServicePort"
+   	type="impl:ALMOrderWebServicePort">
+
+   	<wsdlsoap:binding style="document"
+   		transport="http://schemas.xmlsoap.org/soap/http" />
+   	<wsdl:operation name="submitRetailerOrder">
+
+   		<wsdlsoap:operation
+   			soapAction="http://webservices.metcash.com/submitRetailerOrder" />
+   		<wsdl:input name="submitRetailerOrderRequest">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:input>
+   		<wsdl:output name="submitRetailerOrderResponse">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:output>
+   	</wsdl:operation>
+   	<wsdl:operation name="submitSupplierOrder">
+
+   		<wsdlsoap:operation
+   			soapAction="http://webservices.metcash.com/submitSupplierOrder" />
+   		<wsdl:input name="submitSupplierOrderRequest">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:input>
+   		<wsdl:output name="submitSupplierOrderResponse">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:output>
+   	</wsdl:operation>
+   	<wsdl:operation name="authenticateUser">
+
+   		<wsdlsoap:operation
+   			soapAction="http://webservices.metcash.com/authenticateUser" />
+   		<wsdl:input name="authenticateUserRequest">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:input>
+   		<wsdl:output name="authenticateUserResponse">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:output>
+   	</wsdl:operation>
+   	<wsdl:operation name="getSupplierOrderHistory">
+
+   		<wsdlsoap:operation
+   			soapAction="http://webservices.metcash.com/getSupplierOrderHistory" />
+   		<wsdl:input name="getSupplierOrderHistoryRequest">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:input>
+   		<wsdl:output name="getSupplierOrderHistoryResponse">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:output>
+   	</wsdl:operation>
+   	<wsdl:operation name="getSupplierOrderStatus">
+
+   		<wsdlsoap:operation
+   			soapAction="http://webservices.metcash.com/getSupplierOrderStatus" />
+   		<wsdl:input name="getSupplierOrderStatusRequest">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:input>
+   		<wsdl:output name="getSupplierOrderStatusResponse">
+
+   			<wsdlsoap:body use="literal" />
+   		</wsdl:output>
+   	</wsdl:operation>
+   </wsdl:binding>
+
+   <wsdl:service name="ALMOrderWebService">
+		<wsdl:port binding="impl:ALMOrderWebServicePort"
+			name="ALMOrderWebServicePort">
+			<wsdlsoap:address
+				location="http://portalapps:7009/web-services/ALMOrderWebService" />
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<wsdl:definitions xmlns:ae="http://metcash/ALMEnquiryWebService"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:mgt="metcash/globalTypes" xmlns:msps="metcash/supplierPriceSoh"
+	xmlns:mspsr="metcash/supplierPriceSohResponse"
+	targetNamespace="http://metcash/ALMEnquiryWebService"
+	name="ALMEnquiryWebService">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://metcash/ALMEnquiryWebService">
+			<xsd:import schemaLocation="Product/SupplierPriceSoh.xsd"
+				namespace="metcash/supplierPriceSoh">
+			</xsd:import>
+			<xsd:element name="getSupplierPriceSoh">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element
+							ref="msps:SupplierPriceSohRequest">
+						</xsd:element>
+						<xsd:element name="authenticatedSupplierRepId"
+							type="xsd:string" />
+						<xsd:element
+							name="authenticatedSupplierRepStateId" type="xsd:string">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+
+			<xsd:element name="authenticateUser">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="stateCode" type="xsd:string" />
+						<xsd:element name="userId" type="xsd:string" />
+						<xsd:element name="password" type="xsd:string" />
+						<xsd:element name="businessType">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="Retailer"></xsd:enumeration>
+									<xsd:enumeration value="Supplier"></xsd:enumeration>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="authenticateUserResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="authenticateUserReturn"
+							type="xsd:boolean" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="metcash/supplierPriceSohResponse"
+				schemaLocation="Product/SupplierPriceSohResponse.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getSupplierPriceSohRequest">
+		<wsdl:part element="ae:getSupplierPriceSoh" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getSupplierPriceSohResponse">
+		<wsdl:part element="mspsr:SupplierPriceSohResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="authenticateUserRequest">
+		<wsdl:part name="parameters" element="ae:authenticateUser"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="authenticateUserResponse">
+		<wsdl:part name="parameters"
+			element="ae:authenticateUserResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ALMEnquiryWebService">
+		<wsdl:operation name="getSupplierPriceSoh">
+			<wsdl:input message="ae:getSupplierPriceSohRequest"
+				name="getSupplierPriceSohRequest" />
+			<wsdl:output message="ae:getSupplierPriceSohResponse"
+				name="getSupplierPriceSohResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ALMEnquiryWebServiceSOAP"
+		type="ae:ALMEnquiryWebService">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getSupplierPriceSoh">
+
+			<soap:operation
+				soapAction="http://metcash/ALMEnquiryWebService/getSupplierPriceSoh" />
+			<wsdl:input name="getSupplierPriceSohRequest">
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getSupplierPriceSohResponse">
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+	</wsdl:binding>
+	<wsdl:service name="ALMEnquiryWebService">
+		<wsdl:port binding="ae:ALMEnquiryWebServiceSOAP"
+			name="ALMEnquiryWebServiceSOAP">
+			<soap:address
+				location="http://metcash/ALMEnquiryWebService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+#Wed May 06 08:53:24 EST 2009
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.Message=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.MessageDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.MessageType=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.MessageTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.QDA=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.QDADescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.ParcelBuyList=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.ParcelBuyListDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.QDAList=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.QDAListDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.Bonus=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.BonusDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.RetailerPriceSohResponse=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.RetailerPriceSohResponseDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.DealDescriptionType=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.DealDescriptionTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.RetailerProductDetail=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.RetailerProductDetailDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.ParcelBuy=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.ParcelBuyDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.ProductResponse=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.ProductResponseDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.validation.BonusList=com.metcash.webservices.eai.xml.retailer.pricesoh.validation.descriptors.BonusListDescriptor

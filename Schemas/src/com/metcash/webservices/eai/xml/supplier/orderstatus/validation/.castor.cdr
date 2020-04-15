@@ -1,0 +1,7 @@
+#Thu Apr 09 15:04:41 EST 2020
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.OrderHeaderStatus=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.OrderHeaderStatusDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.Message=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.MessageDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.OrderStatusResponse=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.OrderStatusResponseDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.OrderStatusDetail=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.OrderStatusDetailDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.OrderResponse=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.OrderResponseDescriptor
+com.metcash.webservices.eai.xml.supplier.orderstatus.validation.OrderLineStatus=com.metcash.webservices.eai.xml.supplier.orderstatus.validation.descriptors.OrderLineStatusDescriptor

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="metcash/retailerPriceSoh" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mgt="metcash/globalTypes" xmlns:mrps="metcash/retailerPriceSoh">
+	<xs:import namespace="metcash/globalTypes" schemaLocation="../globalTypes.xsd"/>
+	<xs:element name="RetailerPriceSohRequest" type="mrps:RetailerPriceSohRequestType"/>
+	<xs:complexType name="RetailerPriceSohRequestType">
+			<xs:sequence>
+			<xs:element ref="mrps:Customer"/>
+			<xs:element ref="mrps:Product" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	<xs:element name="Customer" type="mgt:CustomerType"/>
+	<xs:element name="Product" type="mrps:ProductType"/>
+	<xs:complexType name="ProductType">
+		<xs:attribute name="index" type="mgt:IndexType" use="required"/>
+		<xs:attribute name="code" type="mgt:ProductCodeType" use="required"/>
+		</xs:complexType>
+
+</xs:schema>

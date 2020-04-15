@@ -1,0 +1,11 @@
+PortalDataSource.DATA_SOURCE=java:jboss/ALMDataSource
+PortalDataSource.CURSOR_DATA_SOURCE=java:jboss/ALMCursorDataSource
+
+## Raw JDBC Connection Config
+#MS SQLSERVER 2005 - Direct DB Connection
+#SQLDEV2
+PortalDataSource.JDBC_DRIVER=com.microsoft.sqlserver.jdbc.SQLServerDriver
+PortalDataSource.JDBC_DIRECT_URL=jdbc:sqlserver://SQLDEV2:1433;DATABASENAME=alm_commondm_sit;sendStringParametersAsUnicode=false;
+PortalDataSource.JDBC_CURSOR_URL=jdbc:sqlserver://SQLDEV2:1433;DATABASENAME=alm_commondm_sit;selectMethod=cursor;sendStringParametersAsUnicode=false;
+PortalDataSource.JDBC_USERNAME=alm_portal
+PortalDataSource.JDBC_PASSWORD=alm_portal

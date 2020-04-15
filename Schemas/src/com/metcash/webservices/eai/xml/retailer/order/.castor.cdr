@@ -1,0 +1,5 @@
+#Thu Apr 09 15:04:39 EST 2020
+com.metcash.webservices.eai.xml.retailer.order.LineItem=com.metcash.webservices.eai.xml.retailer.order.descriptors.LineItemDescriptor
+com.metcash.webservices.eai.xml.retailer.order.Order=com.metcash.webservices.eai.xml.retailer.order.descriptors.OrderDescriptor
+com.metcash.webservices.eai.xml.retailer.order.Msg=com.metcash.webservices.eai.xml.retailer.order.descriptors.MsgDescriptor
+com.metcash.webservices.eai.xml.retailer.order.OrderHeader=com.metcash.webservices.eai.xml.retailer.order.descriptors.OrderHeaderDescriptor

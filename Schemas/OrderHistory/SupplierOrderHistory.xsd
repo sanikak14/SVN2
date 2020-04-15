@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="metcash/supplierOrderHistory" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mgt="metcash/globalTypes" xmlns:moh="metcash/supplierOrderHistory">
+	<xs:import namespace="metcash/globalTypes" schemaLocation="../globalTypes.xsd"/>
+	<xs:element name="SupplierOrderHistoryRequest" type="moh:SupplierOrderHistoryRequestType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation></xs:element>
+	<xs:element name="Customer" type="mgt:CustomerType"/>
+	<xs:element name="SupplierRep" type="mgt:SupplierRepType"/>
+	<xs:element name="Supplier" type="mgt:SupplierType"/>
+	<xs:complexType name="SupplierOrderHistoryRequestType">
+		<xs:sequence>
+            <xs:element ref="moh:SupplierRep"/>
+            <xs:element ref="moh:Customer" maxOccurs="1" minOccurs="0">
+            	<xs:annotation>
+            		<xs:documentation>Required for Metcash reps</xs:documentation>
+            	</xs:annotation></xs:element>
+            <xs:element name="startDate" type="xs:date" maxOccurs="1" minOccurs="0">
+            	<xs:annotation>
+            		<xs:documentation>if not specified will be last 7 days from end date.</xs:documentation>
+            	</xs:annotation></xs:element>
+			<xs:element name="endDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>if end date not specified, will be up to today.</xs:documentation>
+				</xs:annotation></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

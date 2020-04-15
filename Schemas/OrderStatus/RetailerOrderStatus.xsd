@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="metcash/retailerOrderStatus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mgt="metcash/globalTypes" xmlns:mros="metcash/retailerOrderStatus">
+	<xs:import namespace="metcash/globalTypes" schemaLocation="../globalTypes.xsd"/>
+	<xs:element name="RetailerOrderStatusRequest" type="mros:RetailerOrderStatusRequestType"/>
+	<xs:element name="Customer" type="mgt:CustomerType"/>
+	<xs:element name="Order" type="mros:OrderType"/>
+	<xs:complexType name="RetailerOrderStatusRequestType">
+			<xs:sequence>
+			<xs:element ref="mros:Customer"/>
+			<xs:element ref="mros:Order" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	<xs:complexType name="OrderType">
+		<xs:attribute name="index" type="mgt:IndexType" use="required"/>
+		<xs:attribute name="webOrderId" type="mgt:WebOrderIdType" use="required"/>
+		</xs:complexType>
+</xs:schema>

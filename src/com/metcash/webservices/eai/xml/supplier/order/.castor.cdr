@@ -1,0 +1,5 @@
+#Wed May 06 08:53:02 EST 2009
+com.metcash.webservices.eai.xml.supplier.order.Msg=com.metcash.webservices.eai.xml.supplier.order.descriptors.MsgDescriptor
+com.metcash.webservices.eai.xml.supplier.order.Order=com.metcash.webservices.eai.xml.supplier.order.descriptors.OrderDescriptor
+com.metcash.webservices.eai.xml.supplier.order.LineItem=com.metcash.webservices.eai.xml.supplier.order.descriptors.LineItemDescriptor
+com.metcash.webservices.eai.xml.supplier.order.OrderHeader=com.metcash.webservices.eai.xml.supplier.order.descriptors.OrderHeaderDescriptor

@@ -1,0 +1,6 @@
+#Wed May 06 08:53:08 EST 2009
+com.metcash.webservices.eai.xml.retailer.order.validation.OrderHeaderResponse=com.metcash.webservices.eai.xml.retailer.order.validation.descriptors.OrderHeaderResponseDescriptor
+com.metcash.webservices.eai.xml.retailer.order.validation.RetailerOrderResponse=com.metcash.webservices.eai.xml.retailer.order.validation.descriptors.RetailerOrderResponseDescriptor
+com.metcash.webservices.eai.xml.retailer.order.validation.OrderHeaderMessages=com.metcash.webservices.eai.xml.retailer.order.validation.descriptors.OrderHeaderMessagesDescriptor
+com.metcash.webservices.eai.xml.retailer.order.validation.LineMessages=com.metcash.webservices.eai.xml.retailer.order.validation.descriptors.LineMessagesDescriptor
+com.metcash.webservices.eai.xml.retailer.order.validation.OrderDetail=com.metcash.webservices.eai.xml.retailer.order.validation.descriptors.OrderDetailDescriptor

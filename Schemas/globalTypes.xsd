@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Vrushali (Metcash) -->
+<!-- Created by Gordon Kao (2008-2-7) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:mgt="metcash/globalTypes" targetNamespace="metcash/globalTypes"
+	elementFormDefault="qualified">
+	<xsd:complexType name="SupplierRepType">
+		<xsd:attribute name="id" type="mgt:SupplierRepIdType"
+			use="required" />
+		<xsd:attribute name="stateCode" type="mgt:StateCodeType"
+			use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="CustomerType">
+		<xsd:attribute name="id" type="mgt:CustomerIdType"
+			use="required" />
+		<xsd:attribute name="stateCode" type="mgt:StateCodeType"
+			use="required" />
+	</xsd:complexType>
+	<xsd:simpleType name="StateCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1" />
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="2" />
+			<xsd:enumeration value="3" />
+			<xsd:enumeration value="4" />
+			<xsd:enumeration value="5" />
+			<xsd:enumeration value="6" />
+			<xsd:enumeration value="7" />
+			<xsd:enumeration value="8" />
+			<xsd:enumeration value="9" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IndexType">
+		<xsd:restriction base="xsd:int">
+			<xsd:maxInclusive value="9999999" />
+			<xsd:minInclusive value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProductCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="14" />
+			<xsd:pattern value="\d+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProductCodeTypeType">
+		<xsd:annotation>
+			<xsd:documentation>
+				M: METCASH, V: VENDOR, R: RETAILER
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1" />
+			<xsd:enumeration value="M" />
+			<xsd:enumeration value="V" />
+			<xsd:enumeration value="R" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustomerIdType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="10" />
+			<xsd:pattern value="\d+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SupplierRepIdType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="8" />
+			<xsd:pattern value="\d+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyInCentsType">
+		<xsd:restriction base="xsd:long">
+			<xsd:minInclusive value="0" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="BranchType">
+		<xsd:attribute name="id" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="3" />
+					<xsd:pattern value="\d+" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="SupplierType">
+		<xsd:attribute name="id" type="mgt:SupplierIdType"
+			use="required" />
+		<xsd:attribute name="stateCode" type="mgt:StateCodeType"
+			use="required" />
+	</xsd:complexType>
+	<xsd:simpleType name="SupplierIdType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="5" />
+			<xsd:pattern value="\d+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="WebOrderIdType">
+		<xsd:restriction base="xsd:int">
+			<xsd:maxInclusive value="2147483647" />
+			<xsd:minInclusive value="0" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SOHStatusType">
+		<xsd:annotation>
+			<xsd:documentation>
+				N: NOT AVAILABLE, A: AVAILABLE, O: SOLD OUT, S:
+				SUBSTITUTE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1" />
+			<xsd:enumeration value="N" />
+			<xsd:enumeration value="A" />
+			<xsd:enumeration value="O" />
+			<xsd:enumeration value="S" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MessageType">
+		<xsd:attribute name="data" type="xsd:string" use="required"></xsd:attribute>
+		<xsd:attribute name="severity" type="mgt:severityType" use="required"></xsd:attribute>
+	</xsd:complexType>
+	<xsd:simpleType name="severityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ERROR"></xsd:enumeration>
+			<xsd:enumeration value="WARN"></xsd:enumeration>
+			<xsd:enumeration value="INFO"></xsd:enumeration>
+			<xsd:enumeration value="DEBUG"></xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

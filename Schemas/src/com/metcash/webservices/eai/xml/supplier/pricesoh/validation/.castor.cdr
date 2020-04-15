@@ -1,0 +1,12 @@
+#Thu Apr 09 15:04:45 EST 2020
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.Bonus=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.BonusDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.Message=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.MessageDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.DealDescriptionType=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.DealDescriptionTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.QDA=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.QDADescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.SupplierProductDetail=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.SupplierProductDetailDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.SupplierPriceSohResponse=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.SupplierPriceSohResponseDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.QDAList=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.QDAListDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.ParcelBuyList=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.ParcelBuyListDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.ParcelBuy=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.ParcelBuyDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.ProductResponse=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.ProductResponseDescriptor
+com.metcash.webservices.eai.xml.supplier.pricesoh.validation.BonusList=com.metcash.webservices.eai.xml.supplier.pricesoh.validation.descriptors.BonusListDescriptor

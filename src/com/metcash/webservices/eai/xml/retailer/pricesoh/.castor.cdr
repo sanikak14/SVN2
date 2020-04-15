@@ -1,0 +1,6 @@
+#Wed May 06 08:53:21 EST 2009
+com.metcash.webservices.eai.xml.retailer.pricesoh.RetailerPriceSohRequestType=com.metcash.webservices.eai.xml.retailer.pricesoh.descriptors.RetailerPriceSohRequestTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.Customer=com.metcash.webservices.eai.xml.retailer.pricesoh.descriptors.CustomerDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.RetailerPriceSohRequest=com.metcash.webservices.eai.xml.retailer.pricesoh.descriptors.RetailerPriceSohRequestDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.ProductType=com.metcash.webservices.eai.xml.retailer.pricesoh.descriptors.ProductTypeDescriptor
+com.metcash.webservices.eai.xml.retailer.pricesoh.Product=com.metcash.webservices.eai.xml.retailer.pricesoh.descriptors.ProductDescriptor

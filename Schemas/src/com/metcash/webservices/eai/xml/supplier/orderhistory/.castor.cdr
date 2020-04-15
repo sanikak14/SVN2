@@ -1,0 +1,6 @@
+#Thu Apr 09 15:04:42 EST 2020
+com.metcash.webservices.eai.xml.supplier.orderhistory.Supplier=com.metcash.webservices.eai.xml.supplier.orderhistory.descriptors.SupplierDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.Customer=com.metcash.webservices.eai.xml.supplier.orderhistory.descriptors.CustomerDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.SupplierOrderHistoryRequestType=com.metcash.webservices.eai.xml.supplier.orderhistory.descriptors.SupplierOrderHistoryRequestTypeDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.SupplierRep=com.metcash.webservices.eai.xml.supplier.orderhistory.descriptors.SupplierRepDescriptor
+com.metcash.webservices.eai.xml.supplier.orderhistory.SupplierOrderHistoryRequest=com.metcash.webservices.eai.xml.supplier.orderhistory.descriptors.SupplierOrderHistoryRequestDescriptor

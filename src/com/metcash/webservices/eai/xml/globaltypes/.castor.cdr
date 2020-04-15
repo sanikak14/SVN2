@@ -1,0 +1,6 @@
+#Wed May 06 08:53:21 EST 2009
+com.metcash.webservices.eai.xml.globaltypes.BranchType=com.metcash.webservices.eai.xml.globaltypes.descriptors.BranchTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.SupplierRepType=com.metcash.webservices.eai.xml.globaltypes.descriptors.SupplierRepTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.MessageType=com.metcash.webservices.eai.xml.globaltypes.descriptors.MessageTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.CustomerType=com.metcash.webservices.eai.xml.globaltypes.descriptors.CustomerTypeDescriptor
+com.metcash.webservices.eai.xml.globaltypes.SupplierType=com.metcash.webservices.eai.xml.globaltypes.descriptors.SupplierTypeDescriptor
