@@ -7,10 +7,8 @@
 	
     <path id="compile.classpath">
       <fileset dir="${base}/WebContent/WEB-INF/lib">
-    	<!--<fileset dir="${base}/projLibs">-->
-            <include name="*.jar"/>
-      		<!--<include name="*.properties"/>-->
-        </fileset>
+    	    <include name="*.jar"/>
+      	</fileset>
     </path>
    
     <target name="compile">
@@ -44,27 +42,4 @@
 	</target>   
     </project>
     
-    <!-- <?xml version="1.0" encoding="UTF-8"?>
-
-$RCSfile: build.xml $ $Date: 16/09/19 $Author: Kirtana Rambhad$
-
-<project default="warTarget" basedir=".">
-	<property name="jboss" value="D:/jboss-as-7.1.1.Final" />
-	<property name="jboss.deployment" value="${jboss}/standalone/deployments" />
-	<property name="base" value="." />
-	<property name="source" value="${base}/src" />
-
-	<target name="warTarget">
-		<war warfile="almkrmip.war" needxmlfile="false"
-			webxml="${base}/WebContent/WEB-INF/web.xml">
-			<fileset dir="${source}/com/metcash/ws" />
-
-			<exclude name="WEB-INF/web.xml" />
-		</war>
-		<antcall target="deployTarget" />
-	</target>
-	<target name="deployTarget">
-		<copy file="${base}/almkrmip.war" todir="${jboss.deployment}" />
-	</target>
-
-</project> -->
+   
